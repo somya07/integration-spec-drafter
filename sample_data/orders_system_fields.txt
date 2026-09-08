@@ -1,0 +1,6 @@
+order_id (string, unique)
+customer_id (string)
+sku (string)
+quantity (integer)
+order_status (enum: created, paid, shipped, cancelled)
+created_at (datetime, ISO 8601)
