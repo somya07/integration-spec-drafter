@@ -1,0 +1,6 @@
+sales_order_number (string, unique)
+order_date (datetime, ISO 8601)
+ship_to_address (string)
+bill_to_address (string)
+order_lines (array; each line has item_sku (string) and quantity (integer))
+order_status (enum: new, processing, fulfilled, cancelled)

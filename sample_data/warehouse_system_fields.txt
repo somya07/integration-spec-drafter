@@ -1,5 +1,0 @@
-item_sku (string, unique)
-stock_count (integer)
-warehouse_location (string)
-last_updated (datetime, ISO 8601)
-reorder_threshold (integer)

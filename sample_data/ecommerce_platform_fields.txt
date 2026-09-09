@@ -1,0 +1,6 @@
+order_number (string, unique)
+order_date (datetime, ISO 8601)
+customer_name (string)
+shipping_address (string)
+billing_address (string)
+line_items (array; each item has sku (string) and quantity (integer))

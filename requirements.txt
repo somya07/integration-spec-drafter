@@ -1,2 +1,3 @@
 deepagents
 anthropic
+python-dotenv

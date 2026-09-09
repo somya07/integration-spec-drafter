@@ -4,7 +4,7 @@ An agent that turns a plain-English integration requirement into a technical spe
 
 ## Problem
 
-Integration work usually starts the same way: a business stakeholder describes a need in plain language ("when an order is created, update stock and notify the warehouse team"), and an engineer has to turn that into a scoped technical spec — trigger conditions, field mappings, error handling — plus a plain-English version stakeholders can actually sign off on.
+Integration work usually starts the same way: a business stakeholder describes a need in plain language ("when an order comes in from our ecommerce platform, add it to the ERP"), and an engineer has to turn that into a scoped technical spec — trigger conditions, field mappings, error handling — plus a plain-English version stakeholders can actually sign off on.
 
 ## What this agent does
 
@@ -23,20 +23,24 @@ Integration work usually starts the same way: a business stakeholder describes a
 
 ## Status
 
-🚧 In progress
+✅ Working end to end
 
 ## Example
 
 Input:
-> "When a new order is created in the Orders system, update stock in the Warehouse system and notify the fulfillment team by email."
+> "Orders come from our Ecommerce Platform and need to be added to our ERP via webhook. Each order includes an order number, date requested, shipping address, billing address, and the ordered product SKUs with quantities."
 
-Output: see [`examples/`](./examples) once available.
+Reference fields: [`sample_data/ecommerce_platform_fields.txt`](./sample_data/ecommerce_platform_fields.txt), [`sample_data/erp_fields.txt`](./sample_data/erp_fields.txt)
+
+Output: [`examples/integration_spec.md`](./examples/integration_spec.md), [`examples/stakeholder_summary.md`](./examples/stakeholder_summary.md)
 
 ## Setup
 
 ```bash
+python -m venv venv
+venv\Scripts\Activate.ps1        # Windows PowerShell
 pip install -r requirements.txt
-export ANTHROPIC_API_KEY=your_key_here
+cp .env.example .env             # then add your real ANTHROPIC_API_KEY
 python agent.py
 ```
 
